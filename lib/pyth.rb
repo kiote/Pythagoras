@@ -66,12 +66,6 @@ module Pyth
   }
 
   class << self
-    # конфиг, считываемый из config.yml и кэшируемый в @config
-    def config
-      file_path = File.expand_path('../../config.yml', __FILE__)
-      @config ||= YAML.load_file(file_path)
-    end
-
     def birthday(date)
       numbers = []
       numbers << first_number(date)
