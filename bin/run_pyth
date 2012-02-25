@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH << File.expand_path('../../lib', __FILE__)
+require 'pyth'
+require 'thor'
+class RunPyth < Thor
+    default_task :birthday
+
+    desc :birthday, 'Draw pyth square'
+    def birthday
+        b = ask "your birhtday (dd.mm.yyyy):"
+        say 'Your square:', :green
+        res = Pyth.birthday(b)
+        p res
+        Pyth.description(res)
+    end
+end
+
+RunPyth.start
