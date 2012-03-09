@@ -66,6 +66,8 @@ module Pyth
   }
 
   class << self
+    # возвращает массив с числами для квадрата Пифагора
+    # return Array
     def birthday(date)
       numbers = []
       numbers << first_number(date)
@@ -80,14 +82,17 @@ module Pyth
       arr
     end
 
+    # для каждого числа из массива печатаем словестное описание
     def description(res)
+      s = []
       (1..9).to_a.each do |n|
-        unless res[n].nil?
-          p "#{n}: " + RES[n][res[n].count]
-        else
-          p "#{n}: " + RES[n][0]
-        end
+        s << if res[n].nil?
+               "#{n}: " + RES[n][0]
+             else
+               "#{n}: " + RES[n][res[n].count]
+             end
       end
+      s
     end
 
     protected

@@ -12,7 +12,7 @@ class RunPyth < Thor
         say 'Your square:', :green
         res = Pyth.birthday(b)
         p res
-        Pyth.description(res)
+        p Pyth.description(res)
     end
 end
 
